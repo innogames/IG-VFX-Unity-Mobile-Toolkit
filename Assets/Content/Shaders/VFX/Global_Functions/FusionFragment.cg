@@ -1,0 +1,59 @@
+/*
+Enableing vertex alpha and is using the vertex alpha from mesh texcoords3. 
+*/
+#ifndef FX_FUSIONFRAGMENT
+#define FX_FUSIONFRAGMENT
+
+inline float FusionMaskFragment(in float inMask, in float inAlpha, in float inUse)
+{
+    return lerp(inMask - (1 - inAlpha), inMask, inUse);
+}
+
+inline float FusionFragment(in float inRampA, in float inRampB, in float inFusionIntensity, in float inUseMask)
+{
+    float fusion = saturate(lerp(inRampA + inRampB, lerp(0, inRampA + inRampB, inRampA), inUseMask));
+    float alpha = (saturate(fusion - inFusionIntensity));
+    return saturate((alpha * 100));
+}
+
+inline float FusionOneRampFragment(in float inRamp, in float inFusionIntensity, in float inMask)
+{
+    float fusion = (saturate(inRamp - inFusionIntensity) - inMask);
+    return saturate((fusion * 100));
+}
+
+inline float4 FusionShadingFragment(in float inMask, in float inRampA, in float inRampB, in float inEdgeThickness,
+                                    in float inShadeEdge, in float4 inEdgeColor,
+                                    in float4 inMainColor, in float inMainAlpha, in float3 inNormal,
+                                    in float3 inLightDir, in float inLightEnable,
+                                    in float inLightHardness, in float4 inLightShadow)
+{
+    float3 light = normalize(inNormal - inLightDir);
+    float lightAngle = dot(light, inNormal);
+    bool b = saturate(inRampA + inRampB) < inEdgeThickness;
+    float edge = saturate(b * inMask);
+    float4 tint = lerp((float4(inMainColor.rgb, inMainAlpha)) * inMask,
+                       (saturate(inMainColor * inShadeEdge) * inEdgeColor), edge);
+    return lerp(tint, saturate(inLightShadow), (saturate(lightAngle * inLightHardness) * inMask) * inLightEnable);
+}
+
+inline float4 FusionShadingNoLightFragment(in float inMask, in float inRampA, in float inRampB,
+                                           in float inEdgeThickness, in float inShadeEdge, in float4 inEdgeColor,
+                                           in float4 inMainColor, in float inMainAlpha)
+{
+    bool b = saturate(inRampA + inRampB) < inEdgeThickness;
+    float edge = saturate(b * inMask);
+    return lerp((float4(inMainColor.rgb, inMainAlpha)) * inMask, (saturate(inMainColor * inShadeEdge) * inEdgeColor),
+                edge * inMainColor.a);
+}
+
+inline float4 FusionShadingOneRampFragment(in float inRamp, in float inAlpha, in float inEdgeThickness,
+                                           in float inShadeEdge, in float4 inEdgeColor, in float4 inMainColor)
+{
+    bool b = saturate(inRamp) < inEdgeThickness;
+    float edge = saturate(b * inAlpha);
+    return lerp(saturate((inMainColor) * inAlpha), saturate((inMainColor * inShadeEdge) * inEdgeColor), edge);
+}
+
+
+#endif

@@ -1,0 +1,32 @@
+#ifndef FX_FRESNEL
+#define FX_FRESNEL
+
+inline float3 FresnelVertex(in float4 WpPos, in float fresnelOffset, in float fresnelHardness)
+{
+    float3 camDir = normalize(_WorldSpaceCameraPos - WpPos.xyz);
+    return 1 - saturate(pow(abs(camDir.y + fresnelOffset), fresnelHardness));
+}
+
+inline float FresnelVertexV2(in float3 inNormal, in float4 inPosition)
+{
+    float3 worldNormal = UnityObjectToWorldNormal(inNormal);
+    float3 worldPosition = mul(unity_ObjectToWorld,inPosition);
+                      
+    float3 viewVector = normalize(UnityWorldSpaceViewDir(worldPosition));
+    float fresnel = abs(dot(-viewVector, worldNormal));
+    return fresnel * fresnel;
+}
+
+
+inline float RimLightVertex(in float3 inWpNormal, in float3 inWpPos, in float3 inWpSpaceCamera)
+{
+    float3 viewDir = normalize(inWpSpaceCamera - inWpPos);
+    return dot(normalize(inWpNormal), viewDir);
+}
+
+inline float4 FresnelFragment(in float4 col, in float4 fresneltint, in float fresnelVertex)
+{
+    return col + fresneltint * fresnelVertex;
+}
+
+#endif

@@ -1,0 +1,21 @@
+/*
+Gradient will remapped with 'Look Up Table'.
+*/
+#ifndef FX_GradientMapping
+#define FX_GradientMapping
+
+inline float4 GradientMappingFragment(in float inGradient, in sampler2D inLookUpTable, in float inOffsetV, in float inTableMaxRows, in float inPassLUT, in float2 inUv)
+{
+    float alpha = inGradient;
+    float row = inOffsetV / inTableMaxRows;
+    float2 uv = lerp(float2(alpha, row), inUv, inPassLUT);
+    return  tex2D(inLookUpTable, uv);
+}
+inline float4 RampMappingFragment(in sampler2D inLookUpTable, in float inOffsetV, in float inTableMaxRows, in float inRamp)
+{
+float row = inOffsetV / inTableMaxRows;
+float2 uv = float2(inRamp, row);
+return tex2D(inLookUpTable, uv);
+}
+
+#endif

@@ -1,0 +1,18 @@
+/*
+Generating a gradient base on uv. 
+*/
+#ifndef FX_UVRAMPVERTEX
+#define FX_UVRAMPVERTEX
+
+inline float UvRampVertex(in float2 inTexcoords, in float4 inRampBlend, in float4 inRampOffset, in float4 inRampSet)
+{
+    //ramp
+    float4 rampChannels = (float4(inTexcoords.x, 1 - inTexcoords.x, inTexcoords.y, 1 - inTexcoords.y) * inRampBlend) + inRampOffset;
+    float ramp =   rampChannels.x + rampChannels.y + rampChannels.z + rampChannels.w;
+    ramp = pow(saturate(abs(ramp)), inRampSet.x);
+    ramp *= inRampSet.y;
+    ramp += inRampSet.z;
+    return saturate(ramp);
+}
+
+#endif

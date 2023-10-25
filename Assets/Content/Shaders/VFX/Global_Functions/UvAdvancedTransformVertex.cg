@@ -1,0 +1,43 @@
+/*
+UvManipulation:
+Is inverting, flipping and rotating the Uvs
+
+UvTransform
+Is translating and scaling the uvs.
+
+UvToWorld
+set the uvs in to worldpostion
+*/
+#ifndef FX_UVADVANCETRANSFORM
+#define FX_UVADVANCETRANSFORM
+
+#include "Global_Functions/Invert.cg"
+
+inline float2 UvManipulation(in float2 inTexcoords, in float inFlipU, in float inFlipV, in float inRotate)
+{
+    inTexcoords.x *= InvertFloat(1, inFlipU);
+    inTexcoords.y *= InvertFloat(1, inFlipV);
+    return lerp(inTexcoords, float2(inTexcoords.y, inTexcoords.x), inRotate);
+}
+
+inline float2 UvTransform(in float2 inTexcoords, in float4 inTransform)
+{
+    return float2(float2(inTexcoords.xy * inTransform.xy) + inTransform.zw);
+}
+
+inline float2 UvToWorld(in float3 inWorldPos)
+{
+    return float2(inWorldPos.xy);
+}
+
+inline float2 UvToCtr(float2 inTexcoords){
+    return inTexcoords = (inTexcoords - 0.5) * 2.0;
+}
+
+inline float2 UvToPolar(float2 inTexcoords){
+    float distance = length(inTexcoords);
+    float angle = atan2(inTexcoords.y, inTexcoords.x);
+    return float2(angle / UNITY_TWO_PI, distance);
+}
+
+#endif

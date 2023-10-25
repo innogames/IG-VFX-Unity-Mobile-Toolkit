@@ -1,0 +1,12 @@
+/*
+Enableing vertex alpha and is using the vertex alpha from mesh texcoords3. 
+*/
+#ifndef FX_ALPHAVERTEX
+#define FX_ALPHAVERTEX
+
+inline float4 AlphaVertex(in float4 inColor, in float inTexcoords)
+{
+    return float4(inColor.rgb, lerp(inTexcoords * inColor.a, inColor.a, _OffVc));
+}
+
+#endif

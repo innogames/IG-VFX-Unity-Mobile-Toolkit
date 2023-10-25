@@ -1,0 +1,19 @@
+/*
+*Generates a gradient by a realtive to source position.
+*/
+#ifndef FX_LIGHT_GRADIENT
+#define FX_LIGHT_GRADIENT
+
+#include "Remap.cg"
+
+inline float LightGradientVertex(in float3 inWpPos, in float3 inNormal, in float3 inLightCtr, in float inRange, in float inFallOff, in float inHardness)
+{
+    float dist = distance(inWpPos, inLightCtr);
+    dist = RemapVector3((dist), 0.0, inRange, 0.0, 1.0);
+    dist = (pow(saturate(1 - dist), inFallOff)) * inHardness;
+    
+    float3 dir = normalize(inLightCtr - inWpPos);
+    float angle = dot(normalize(inNormal), dir);
+    return saturate(dist);
+}
+#endif

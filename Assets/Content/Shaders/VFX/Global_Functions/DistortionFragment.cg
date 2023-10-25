@@ -1,0 +1,24 @@
+/*
+Adding values by a grayscale ramp.
+*/
+#ifndef FX_DISTORTION
+#define FX_DISTORTION
+
+inline float2 DistortionFragment(in float inMask, in float inInvMask, in float2 inMotionVectorTex, in float inStrength, in float inUseNegative, in float2 inTexcoords)
+{
+    float dstMask = lerp(inMask, 1 - inMask, inInvMask);
+    float2 disTex = lerp(inMotionVectorTex, (inMotionVectorTex - 0.5) * 2.0, inUseNegative);
+    disTex = (disTex * dstMask) * inStrength;
+    return float2(inTexcoords.x + disTex.r, inTexcoords.y + disTex.y);
+}
+
+inline float2 SimpleDistortionFragment(in float2 inMotionVectorTex, in float inStrength)
+{
+    float2 disTex = (inMotionVectorTex - 0.5) * 2.0;
+    disTex *= inStrength;
+    return disTex;
+}
+
+#endif
+
+

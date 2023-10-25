@@ -1,0 +1,19 @@
+    /*
+Blending RGB Channels of Texture. 
+*/
+#ifndef FX_BLENDCHANNELS
+#define FX_BLENDCHANNELS
+
+inline float BlendTexChannelFragment(in float3 inTexture, in float3 inBlend)
+{
+    float3 value = inTexture * inBlend;
+    return value.r + value.g + value.b;
+}
+
+inline float Blend4TexChannelFragment(in float4 inTexture, in float4 inBlend)
+{
+    float4 value = inTexture * inBlend;
+    return value.r + value.g + value.b + value.a;
+}
+
+#endif

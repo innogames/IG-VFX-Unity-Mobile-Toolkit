@@ -1,0 +1,13 @@
+/*
+Adding values by a grayscale ramp.
+*/
+#ifndef FX_DISSOLVE
+#define FX_DISSOLVE
+
+inline float DissolveFragment(in float inRamp, in float inInvertRamp, in float inRampHardness, in float inDissolve)
+{
+    float dis = saturate(lerp(inRamp, 1 - inRamp, inInvertRamp)) * inRampHardness;
+    return saturate(dis + (1 - (inDissolve) * inRampHardness));
+}
+
+#endif

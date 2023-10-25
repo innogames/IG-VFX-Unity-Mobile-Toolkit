@@ -1,0 +1,13 @@
+/*
+True Color is ramping 2 Colors of a Float Gradient. (And the Alpha is Blending between Alpha and Additve Blend. 
+*/
+#ifndef FX_TRUECOLOR
+#define FX_TRUECOLOR
+
+inline float4 TrueColorFragment(in float4 inColor01, in float4 inColor02, in float inRamp)
+{
+    float burn = saturate(abs(inRamp) * inColor02.a);
+    return lerp(inColor02, inColor01, burn);
+}
+
+#endif
