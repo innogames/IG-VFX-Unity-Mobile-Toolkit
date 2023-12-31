@@ -164,7 +164,7 @@
                     half texMask = tex2D(_Mask, i.Mask).r;
                     half subMask = saturate(texMask - _shrinkM);
                     half mask = FusionMaskFragment(subMask, i.Color.a, _UseVtxA);
-
+                   
                     //use Channels 
                     half4 alphaR = saturate(tex2D(_AlphaR, i.Alpha) - cust2.x);
                     half4 alphaG = saturate(tex2D(_AlphaG, i.Dissolve) - cust2.y);

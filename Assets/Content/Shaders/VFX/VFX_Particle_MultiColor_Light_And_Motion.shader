@@ -3,7 +3,7 @@
     Properties
     {
         //Compile Features
-        [Space(25)][Header(COMPUTE FEATURES)][Space(5)]
+        [Space(10)][Header(COMPUTE FEATURES)][Space(5)]
         [Toggle(GEO)] _GEO ("Compute Geometry", int) = 0
         [Toggle(GEO_TEX)]_GEO_TEX("Compute Geometry Add Texture", int) = 0  
         [Toggle(LIGHT)] _LIGHT ("Compute Gradient by Light", int) = 0
@@ -12,51 +12,53 @@
         [Toggle(DISSOLVE)] _DISSOLVE ("Compute Dissolve", int) = 0
         [Toggle(DISTORTION)] _DISTORTION ("Compute Distortion", int) = 0
         //Geometry Properties
-        [Space(25)][Header(GEOMETRY PROPERTIES)][Space(10)]_GeoDeformPhase("Deformation Phase ", range(-10.0, 10.0)) = 0.0
+        [Space(5)]_GeoDeformPhase("Deformation Phase ", range(-10.0, 10.0)) = 0.0
         _GeoDeformAmplitude("Deformation Amplitude ", range(0.0, 100.0)) = 0.0
-        _GeoRimMul("Rim Multiplier", range(0.0, 2.0)) = 1.0
-        _GeoRimHardness("Rim Hardness", range(0.0, 1.0)) = 0.0
         _GeoAxis("Deformation Axis ", vector) = (1.0, 0.0, 0.0, 0.0)
         _GeoPush("Push Axis", vector) = (0.0, 0.0, 0.0, 0.0)
         _GeoOffset("Offset", range(0.0, 10.0)) = 0.0
         [Toggle]_GeoUseCd("Geo Offset Use Custom Data 1", int ) = 0
         _GeoCustom("Geo Offset by CD1 Channel (0 - 3)", int) = 0
-        [Toggle]_DisableAlpha("Disable in Alpha", int) = 0
+        _GeoRimMul("Rim Multiplier", range(0.0, 2.0)) = 1.0
+        _GeoRimHardness("Rim Hardness", range(0.0, 1.0)) = 0.0
+        _GeoRimBlend("Rim Blend Strength", range(0.0, 100.0)) = 1.0
         //Gradient Properties
-		[Space(25)][Header(GRADIENT PROPERTIES)][Space(10)]_GradientColor("Gradient Color", color) = (1.0, 1.0, 1.0, 1.0)
+		[Space(5)]_GradientColor("Gradient Color", color) = (1.0, 1.0, 1.0, 1.0)
         _GradientStrength("Gradient Strength", range(0, 10)) = 0
         _GradientBrightness("Gradient Brightness", range(0, 1)) = 0
         //Gradient by Light Properties
-        [Space(25)][Header(Gradient by Light)][Space(5)][Toggle]_LightRangeMul("Multiply Light Sources and Light Radius", int) = 0
+        [Space(5)][Toggle]_LightRangeMul("Convert To A Light", int) = 0
         _SetPos("Set Position", vector) = (0.0, 0.0, 0.0, 0.0)
         _LightPos("Light Source Position", vector) = (0.0, 0.0, 0.0, 0.0)
         _LightRange("Light Range", range(0.0, 100.0)) = 0.0
         _LightFallOff("Light Fall Off", range(0.0, 10.0)) = 0.0
         _LightHardness("Light Hardness",range(0.0, 10.0)) = 0.0
         //Gradient by Uv Properties
-        [Space(10)][Header(Gradient by Uv)][Space(5)][Toggle]_MulLight("Multiply Uv Ramp to Light Sources", int) = 0
+        [Space(5)][Toggle]_MulLight("Multiply Uv Ramp to Light Sources", int) = 0
         _UvRampBlend("UV Ramp Axis Blend (X = Positive U, Y = Negative U, Z = Positive V, W = Negative W)", vector) = (0.0, 0.0, 0.0, 0.0)
 		_UvRampOffset("Uv Ramp Offset", vector) = (0.0, 0.0, 0.0, 0.0)
 		_UvRampSet("Uv Ramp Settings", vector)  = (1.0, 1.0, 0.0, 0.0)
         //Shading
-        [Space(50)][Header(LOOK AND FEEL PROPERTIES)][Space(5)][NoScaleOffset]_LookUpTex ("Look Up Table", 2D) = "white" {}
+        [Space(5)][NoScaleOffset]_LookUpTex ("Look Up Table", 2D) = "white" {}
         [Toggle]_PassLUT("Switch LUT to Color Gradient", int) = 0
         [Toggle]_MulPColor("Multiply Particle Color", int) = 0
+        [Toggle]_DisableAlpha("Disable in Alpha", int) = 0
         //Alpha Properties
-        [Space(25)][Header(ALPHA PROPERTIES)][Space(10)][NoScaleOffset]_Alpha ("Packed Texture", 2D) = "white" {}
+        [Space(5)][Toggle]_AMaskUse("Enable Alpha Mask", int ) = 0
+        [NoScaleOffset]_Alpha ("Packed Texture", 2D) = "white" {}
         _BlendChannels("Blend Packed Texture Channel", vector) = (0.0, 0.0, 0.0, 0.0)
         _AlphaTrans("Uv Tiling & Offset", vector) = (1.0, 1.0, 0.0, 0.0)
-        [Space(5)][Header(Alpha Mask)][Space(5)]
-        [NoScaleOffset]_AMask("Alpa Mask", 2D) = "white" {}
-        [Toggle]_AMaskUse("Enable Alpha Mask", int ) = 0
+        [Space(5)][NoScaleOffset]_AMask("Alpa Mask", 2D) = "white" {}
+        [Toggle]_AMaskUseAlphaUv("Alpha Mask use Alpha Uv", int ) = 0
         _AMaskTrans("Alpha Mask Uv Tiling & Offset", vector) = (1.0, 1.0, 0.0, 0.0)
         _AMaskSqSw("Alpha Mask Enable Squeez XY & Swipe ZW", vector ) = (0.0, 0.0, 0.0, 0.0)
         _AMaskCh("Alpha Mask Use Custom Data 1 Channel (0 - 3)", vector ) = (0, 1, 2, 3)
         //Dissolve Properties
-        [Space(25)][Header(DISSOLVE PROPERTIES)][Space(10)][NoScaleOffset]_DisTex("Dissolve Ramp", 2D) = "gray" {}
+        [Space(5)][NoScaleOffset]_DisTex("Dissolve Ramp", 2D) = "gray" {}
         [Toggle]_DisFlipU("Dissolve Flip U", int )= 0
         [Toggle]_DisFlipV("Dissolve Flip V", int )= 0
         [Toggle]_DisRot("Dissolve Rotate 90 Degress", int )= 0
+        [Toggle]_DisUseAlphaUv("Dissolve use Alpha Uv", int ) = 0
         [Toggle]_DisInv("Dissolve Invert Ramp", int )= 0
         [Toggle]_DisUseCd("Dissolve Use Custom Data 1", int ) = 0
         _DisCustom("Dissolve Strength by CD1 Channel (0 - 3)", int) = 0
@@ -64,7 +66,7 @@
         _DisTrans("Dissolve Uv Tiling & Offset", vector) = (1.0, 1.0, 0.0, 0.0)
         _DisFallOff("Dissolve Fall Off", Range(1, 100)) = 1
         //Distortion Properties
-        [Space(25)][Header(DISTORTION PROPERTIES)][Space(10)][NoScaleOffset]_DstTex ("Distortion Texture", 2D) = "gray" {}
+        [Space(5)][NoScaleOffset]_DstTex ("Distortion Texture", 2D) = "gray" {}
         [NoScaleOffset]_DstMask ("Distortion Mask", 2D) = "white" {}
         [Toggle] _DstInvMask ("Distortion Mask Invert", int) = 0
         [Toggle]_DstAlpha("Distortion Enable for Alpha", int ) = 0
@@ -75,11 +77,10 @@
         [Toggle]_DstWorldUv ("Distortion Set World Uv Cordinates", int) = 0
         _DstTrans ("Distortion Uv Tiling & Offset", vector) = (1.0, 1.0, 0.0, 0.0)
         //Uv Properties
-        [Space(10)][Header(UV MANIPULATE PROPERTIES)][Space(10)]
-        [Space(5)][Header(Uv Alpha)][Space(5)]_UvAlphaSqSw("Uv Alpha Enable Squeez XY & Swipe ZW", vector ) = (0.0, 0.0, 0.0, 0.0)
-        _UvAlphaCh("Uv Alpha Use Custom Data 1 Channel (0 - 3)", vector ) = (0, 1, 2, 3)
-        [Space(5)][Header(Uv Distortion)][Space(5)]_UvDstSqSw("Uv Distortion Enable Squeez XY & Swipe ZW", vector ) = (0.0, 0.0, 0.0, 0.0)
-        _UvDstCh("Uv Distortion Use Custom Data 1 Channel (0 - 3)", vector ) = (0, 1, 2, 3)
+        [Space(5)][Header(Uv Alpha)][Space(5)]_UvAlphaSqSw("Enable Squeez XY & Swipe ZW", vector ) = (0.0, 0.0, 0.0, 0.0)
+        _UvAlphaCh("Use Custom Data 1 Channel (0 - 3)", vector ) = (0, 1, 2, 3)
+        [Space(5)][Header(Uv Distortion)][Space(5)]_UvDstSqSw("Enable Squeez XY & Swipe ZW", vector ) = (0.0, 0.0, 0.0, 0.0)
+        _UvDstCh("Use Custom Data 1 Channel (0 - 3)", vector ) = (0, 1, 2, 3)
         [Space(5)][Header(Uv Twist)][Space(5)][Toggle]_UvTwistUInv("Uv Twist Invert U", int ) = 0
         [Toggle]_UvTwistVInv("Uv Twist Invert V", int ) = 0
         [Toggle]_UvTwistAlphaCd("Uv Twist Alpha Use Custom Data", int ) = 0
@@ -87,7 +88,7 @@
         _UvTwist("Uv Twist", vector) = (0.0, 0.0, 0.0, 0.0)
         _UvTwistCh("Uv Distortion Use Custom Data 1 Channel (0 - 3)", vector ) = (0, 1, 2, 3)
         //Render Properties
-        [Space(25)][Header(RENDER PROPERTIES)][Space(5)]
+        [Space(5)]
         [Toggle]_BlendAdd ("Premultiplied Mode", int) = 0
         [Toggle]_OffVc("Disable Vertex Color", int ) = 0
         [Enum(UnityEngine.Rendering.CullMode)]_Cull("Cull Mode", Int) = 4
@@ -115,6 +116,8 @@
                     uniform float _PassLUT;
                     uniform float _UseImage;
                     uniform float _MulPColor;
+                    uniform half _DisableAlpha;
+                    uniform half _AMaskUseAlphaUv;
 
                     #if GEO
                         uniform half _GeoDeformPhase;
@@ -123,10 +126,11 @@
                         uniform half4 _GeoPush;
                         uniform half _GeoRimMul;
                         uniform half _GeoRimHardness;
+                        uniform half _GeoRimBlend;
                         uniform half _GeoOffset;
                         uniform half _GeoCustom;
                         uniform half _GeoUseCd;
-                        uniform half _DisableAlpha;
+                        
                     #endif
                                         
                     #if UV_COLOR_RAMP
@@ -168,6 +172,7 @@
                         uniform float _DisCustom;
                         uniform float _DisUseCd;
                         uniform float _DisStrength;
+                        uniform float _DisUseAlphaUv;
                     #endif
 
                     #if DISTORTION
@@ -238,6 +243,7 @@
 
                 #pragma shader_feature_local __ GEO
                 #pragma shader_feature_local __ GEO_TEX
+                #pragma shader_feature_local __ LIGHT
                 #pragma shader_feature_local __ UV_COLOR_RAMP
                 #pragma shader_feature_local __ UV_MANIPULATE
                 #pragma shader_feature_local __ DISSOLVE
@@ -339,14 +345,14 @@
                     float wpRamp = 0.0;
                     float lightUv = 0.0;
                     #if LIGHT
-                        wpRamp = LightGradientVertex(pos.xyz, v.Normal, (_SetPos.xyz + _LightPos.xyz), _LightRange, _LightFallOff, _LightHardness);
+                        wpRamp = LightGradientVertex(pos.xyz, v.Normal, (_SetPos.xyz + _LightPos.xyz), _LightRange, _LightFallOff, _LightHardness, _LightRangeMul);
                     #endif
                     #if UV_COLOR_RAMP
                         lightUv = UvRampVertex(v.texcoords2, _UvRampBlend, _UvRampOffset, _UvRampSet);
                     #endif
                     #if LIGHT || UV_COLOR_RAMP
                         light = lerp(light + lightUv, light * lightUv, _MulLight);
-                        light = lerp(light + wpRamp, (light + wpRamp) * wpRamp, _LightRangeMul);
+                        light = light + wpRamp;
                         light = saturate(light);
                     #endif
 
@@ -361,43 +367,53 @@
                     o.UvPackedTex = uvPackedTex;
                     o.SecondColor = v.texcoords1;
                     #if DISSOLVE
-                        o.Dissolve = float3(uvDis, v.texcoords.w);
+                        o.Dissolve = float3(lerp(uvDis, uvPackedTex, _DisUseAlphaUv), v.texcoords.w);
                     #endif
                     #if DISTORTION
                         o.UvDistortion = float4(uvDst.xy, v.texcoords2);
                     #endif
                     o.Light = light;
                     o.CustomData1 = v.texcoords;
-                    o.AMask = aMask;
+                    o.AMask =  float2(lerp(aMask, uvPackedTex, _AMaskUseAlphaUv));
                     return o;
                 }
 
                 float4 frag(v2f i) : SV_Target
                 {
+                   
                     #if DISTORTION
                         //Distortion function & link to Particle Custom Data 				
                         float2 dstUseCd = float2(_DstStrength, i.CustomData1[_DstCustom]);
                         float dstMaskTex = tex2D(_DstMask, i.UvDistortion.zw).r;
                         float2 dstTex = tex2D(_DstTex, i.UvDistortion.xy).rg;
                     #endif
+
+                    #if DISTORTION
+                            i.UvPackedTex.xy = lerp(i.UvPackedTex.xy, DistortionFragment(dstMaskTex, _DstInvMask, dstTex, dstUseCd[_DstUseCd], 1, i.UvPackedTex.xy), _DstAlpha);
+                    #endif
                     
                     //Alpha
-                    #if DISTORTION
-                            i.UvPackedTex = lerp(i.UvPackedTex, DistortionFragment(dstMaskTex, _DstInvMask, dstTex, dstUseCd[_DstUseCd], 1, i.UvPackedTex), _DstAlpha);
-                    #endif
-
-                    //Alpha Mask
                     half mask;
-                    half alpha = 1.0;                   
+                    half alpha = 1.0;
+                    half4 mulColor;
+                    
                     #if GEO != 1 || GEO_TEX == 1
-                        half4 packedTex = tex2D( _Alpha, i.UvPackedTex);
-                        mask = BlendTexChannelFragment(packedTex.rgb, _BlendChannels.rgb);
-                        alpha = mask;
-                    #endif 
+                        #if TEX != 1
+                            half4 packedTex = tex2D( _Alpha, i.UvPackedTex.xy);
+                            mask = BlendTexChannelFragment(packedTex.rgb, _BlendChannels.rgb);
+                            alpha = lerp(mask, alpha, _DisableAlpha);
+                        #endif
 
+                        #if TEX == 1
+                            mulColor = tex2D(_Alpha, i.UvPackedTex.xy);
+                        #endif
+                    
+                    #endif
+                    
                     #if GEO
                         i.Rim *= _GeoRimMul;
-                        i.Rim += _GeoRimHardness;
+                        i.Rim += _GeoRimHardness * _GeoRimBlend;
+                                                         
                         #if GEO_TEX != 1
                             mask = saturate(i.Rim);
                         #endif
@@ -407,12 +423,24 @@
                         alpha = lerp(mask, alpha, _DisableAlpha);
                     #endif
 
-                     half aMask = 1.0;
-                    
+                    half aMask = 1.0;
+
                     #if GEO != 1 || GEO_TEX == 1
+                        #if DISTORTION
+                               i.AMask.xy = (DistortionFragment(dstMaskTex, _DstInvMask, dstTex,  dstUseCd[_DstUseCd], 1, i.AMask.xy)) * _DstAlpha;
+                        #endif
+                        
                         //Alpha Mask
-                        aMask = tex2D(_AMask, i.AMask).r;
+                        #if TEX != 1
+                            aMask = tex2D(_AMask,  i.AMask.xy).r;
+                        #endif
+                      
+                        #if TEX == 1
+                            aMask = tex2D( _Alpha,  i.AMask.xy).a;
+                        #endif
+                    
                         aMask = lerp(1.0, aMask, _AMaskUse);
+                  
                     #endif
 
                     //Dissolve
@@ -427,10 +455,10 @@
                     #endif
                                         
                     //Shading
-                    float4 gradientMapping = GradientMappingFragment(alpha, _LookUpTex, 0,_LookUpTex_TexelSize.w, _PassLUT, i.UvPackedTex);
-                    float4 mulColor = lerp(gradientMapping, gradientMapping, saturate(gradientMapping.a));
+                    float4 gradientMapping = GradientMappingFragment(mask, _LookUpTex, 0,_LookUpTex_TexelSize.w, _PassLUT, i.UvPackedTex);
+                    mulColor = lerp(gradientMapping, gradientMapping, saturate(gradientMapping.a));
 
-                    #if UV_COLOR_RAMP
+                    #if LIGHT || UV_COLOR_RAMP
                         mulColor.rgb += i.Light * ((_GradientColor * _GradientStrength) + _GradientBrightness);
                     #endif
 
@@ -439,5 +467,6 @@
                 ENDCG
             }
         }
+       CustomEditor "InnoGames.VFX.Game.Editor.VFX_ShaderGUI_Particle_MulitColor_LightAndMotion"
     }
 }

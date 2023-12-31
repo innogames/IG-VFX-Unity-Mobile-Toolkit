@@ -10,52 +10,51 @@
 		[Toggle(DEBUG_DIS)]_DebugDis("Debug Dissolve", int) = 0
 		[Toggle(DEBUG_DST)]_DebugDist("Debug Distortion", int) = 0
 		//Shading Properties
-		[Space(25)][Header(SHADING)][Space(5)][Toggle]_GlowRed("Use Red Channel As Glow ", int) = 0
+		[Space(5)][Toggle]_GlowRed("Use Red Channel As Glow ", int) = 0
 		[Toggle]_GlowGreen("Use Green Channel As Glow ", int) = 0
 		[Toggle]_GlowBlue("Use Blue Channel As Glow ", int) = 0
-		[Space(20)]
-		_ColorTint("Additive Tint Color", color) = (0.0, 0.0, 0.0, 1.0)
+		[Space(20)]_ColorTint("Additive Tint Color", color) = (0.0, 0.0, 0.0, 1.0)
 		_ColorAdd("Additve Blend", range(0.0, 1.0)) = 0.0
 		[Space(20)][Header(Color Ramp)][Space(5)]_RampColor("Second Color", color) = (1.0, 1.0, 1.0, 1.0)
 		_RampBlend("Ramp Blend", vector) = (1.0, 1.0, 1.0, 1.0)
 		_RampOffset("Ramp Offset", vector) = (0.0, 0.0, 0.0, 0.0)
 		_RampSet("Ramp Multiplier", vector)  = (1.0, 1.0, 0.0, 0.0)
 		//Alpha Properties
-		[Space(25)][Header(ALPHA)][Space(5)][Toggle]_FlipUAlpha("UV Flip U", int) = 0
-		[Toggle]_FlipVAlpha("UV Flip V", int) = 0
-		[Toggle]_RotateAlpha("UV Rotate 90 Degrees", int) = 0
-		[Toggle]_SwirlInvAlpha("Invert Swirl", int) = 0
-		_SwirlAlpha("Swirl Direction U", range(-1, 1)) = 0
-		_BlendChannels("Blend Channels (X = Red, Y = Green, Z = Blue, W = Not In Use)", vector) = (1.0, 0.0, 0.0, 0.0)
-		_TransAlpha("Transform (X Custom Data 1.y, Y Tiling, Z & W Offset)", vector) = (1.0, 1.0, 0.0, 0.0)
+		[Space(5)][Toggle]_AlphaFlipU("Uv Flip U", int) = 0
+		[Toggle]_AlphaFlipV("Uv Flip V", int) = 0
+		[Toggle]_AlphaRotate("Uv Rotate 90 Degrees", int) = 0
+		[Toggle]_AlphaSwirlInv("Invert Swirl", int) = 0
+		_AlphaSwirl("Swirl Direction U", range(-1, 1)) = 0
+		_AlphaBlendChannels("Blend Channels (X = Red, Y = Green, Z = Blue, W = Not In Use)", vector) = (1.0, 0.0, 0.0, 0.0)
+		_AlphaTrans("Transform (X Custom Data 1.y, Y Tiling, Z & W Offset)", vector) = (1.0, 1.0, 0.0, 0.0)
 		[NoScaleOffset]_AlphaTex ("Texture Pack", 2D) = "white" {}
 		//Mask Properties
-		[Space(25)][Header(MASK)][Space(5)]
-		[Toggle]_FlipUMask("UV Flip U", int) = 0
-		[Toggle]_FlipVMask("UV Flip V", int) = 0
-		[Toggle]_RotateMask("UV Rotate 90 Degrees", int) = 0
-		[Toggle]_StretchU("Overwrite Custom Data X for Stretch", int) = 0
-		[Toggle]_SwipeU("Overwrite Custom Data Y for Swipe", int) = 1
-		[Toggle]_SyncAlpha("Sync with Alpha", int) = 0
-		_TransMask("Transform (X & Y Tiling, Z Custom Data 1 Y, W Offset)", vector) = (1.0, 1.0, 0.0, 0.0)
+		[Space(5)]
+		[Toggle]_MaskFlipU("Uv Flip U", int) = 0
+		[Toggle]_MaskFlipV("Uv Flip V", int) = 0
+		[Toggle]_MaskRotate("Uv Rotate 90 Degrees", int) = 0
+		[Toggle]_MaskStretchU("Overwrite Custom Data X for Stretch", int) = 0
+		[Toggle]_MaskSwipeU("Overwrite Custom Data Y for Swipe", int) = 1
+		[Toggle]_MaskSyncAlpha("Sync with Alpha", int) = 0
+		_MaskTrans("Transform (X & Y Tiling, Z Custom Data 1 Y, W Offset)", vector) = (1.0, 1.0, 0.0, 0.0)
 		[NoScaleOffset]_MaskTex ("Mask", 2D) = "white" {}
 		//Dissolve Properties
-		[Space(25)][Header(DISSOLVE)][Space(5)][Toggle]_FlipU("UV Flip U", int) = 0
-		[Toggle]_FlipV("UV Flip V", int) = 0
-		[Toggle]_Rotate("UV Rotate 90 Degrees", int) = 0
-		[Toggle]_Invert ("Invert", int )= 0
-		_FallOff ("Fall Off", Range(1, 10)) = 1
-		_TransDis("Transform (X & Y Tiling, Z & W Offset)", vector) = (1.0, 1.0, 0.0, 0.0)
-		[NoScaleOffset]_DissolveTex ("Ramp", 2D) = "gray" {}
+		[Space(5)][Toggle]_DisFlipU("Uv Flip U", int) = 0
+		[Toggle]_DisFlipV("Uv Flip V", int) = 0
+		[Toggle]_DisRotate("Uv Rotate 90 Degrees", int) = 0
+		[Toggle]_DisInvert ("Invert", int )= 0
+		_DisFallOff ("Fall Off", Range(1, 10)) = 1
+		_DisTrans("Transform (X & Y Tiling, Z & W Offset)", vector) = (1.0, 1.0, 0.0, 0.0)
+		[NoScaleOffset]_DisTex ("Ramp", 2D) = "gray" {}
 		//Distortion Properties
-		[Space(25)][Header(DISTORTION)][Space(5)]
+		[Space(5)]
 		[Toggle]_DistAlpha("Enbale for Alpha", int) = 0
 		[Toggle]_DistDis("Enbale for Dissolve", int) = 0
 		[Toggle]_DistMask("Enbale for Mask", int) = 0
-		_TransDist("Transform (X & Y Tiling, Z & W Offset)", vector) = (1.0, 1.0, 0.0, 0.0)
-		[NoScaleOffset]_MotionTex ("Motion Vector", 2D) = "gray" {}
+		_DistTrans("Transform (X & Y Tiling, Z & W Offset)", vector) = (1.0, 1.0, 0.0, 0.0)
+		[NoScaleOffset]_DistTex ("Distortion Map", 2D) = "gray" {}
 		//Render Properties
-		[Space(25)][Header(RENDER)][Space(5)][Header(Vertex Input)][Space(5)][Toggle]_OffVc("Disable Vertex Alpha", int ) = 0
+		[Space(5)][Header(Vertex Input)][Space(5)][Toggle]_OffVc("Disable Vertex Alpha", int ) = 0
 		[Enum(UnityEngine.Rendering.CullMode)]_Cull("Cull Mode", Int) = 4
 		[Space(5)][Header(Stencil Buffer)][Space(5)]_StencilMask("Stencil Mask", Int) = 0
         [Enum(UnityEngine.Rendering.CompareFunction)]_StencilComp("Stencil Compare", int) = 0
@@ -72,35 +71,35 @@
 		SubShader {
 			CGINCLUDE
 				sampler2D _AlphaTex;
-				sampler2D _DissolveTex;
+				sampler2D _DisTex;
 				sampler2D _MaskTex;
-				sampler2D _MotionTex;
+				sampler2D _DistTex;
 
-				uniform float4 _TransAlpha;
-				uniform half4 _BlendChannels;
-				uniform half _RotateAlpha;
-				uniform half _FlipUAlpha;
-				uniform half _FlipVAlpha;
-				uniform half _SwipeU;
-				uniform half _StretchU;
-				uniform half _SwirlAlpha;
-				uniform half _SwirlInvAlpha;
-				uniform float4 _TransDis;
-               	uniform half _Rotate;
-				uniform half _FlipU;
-				uniform half _FlipV;
+				uniform float4 _AlphaTrans;
+				uniform half4 _AlphaBlendChannels;
+				uniform half _AlphaRotate;
+				uniform half _AlphaFlipU;
+				uniform half _AlphaFlipV;
+				uniform half _MaskSwipeU;
+				uniform half _MaskStretchU;
+				uniform half _AlphaSwirl;
+				uniform half _AlphaSwirlInv;
+				uniform float4 _DisTrans;
+               	uniform half _DisRotate;
+				uniform half _DisFlipU;
+				uniform half _DisFlipV;
 				uniform half _GlowRed;
 				uniform half _GlowGreen;
 				uniform half _GlowBlue;
-				uniform float4 _TransMask;
-				uniform half _RotateMask;
-				uniform half _FlipUMask;
-				uniform half _FlipVMask;
-				uniform half _SyncAlpha;
-				uniform float4 _TransDist;
-				uniform half _RotateDist;
-				uniform half _FlipUDist;
-				uniform half _FlipVDist;
+				uniform float4 _MaskTrans;
+				uniform half _MaskRotate;
+				uniform half _MaskFlipU;
+				uniform half _MaskFlipV;
+				uniform half _MaskSyncAlpha;
+				uniform float4 _DistTrans;
+				uniform half _DisRotateDist;
+				uniform half _DisFlipUDist;
+				uniform half _DisFlipVDist;
 				uniform half _DistAlpha;
 				uniform half _DistDis;
 				uniform half _DistMask;
@@ -110,8 +109,8 @@
 				uniform half4 _RampBlend;
 				uniform half4 _RampOffset;
 				uniform half4 _RampSet;
-				uniform half _FallOff;
-				uniform half _Invert;
+				uniform half _DisFallOff;
+				uniform half _DisInvert;
 				uniform half _OffVc;
 			ENDCG
 			
@@ -190,9 +189,9 @@
                 	ramp = saturate(ramp);
                   	
 					//Swizzles Custom Data with Tranforms
-                	float4 transTex = float4(lerp( v.texcoords.x, _TransAlpha.x, _StretchU), _TransAlpha.y, lerp(v.texcoords.y, _TransAlpha.z, _SwipeU), _TransAlpha.w);
-					float4 transMask = float4(lerp(_TransMask.x, v.texcoords.x, _StretchU), _TransMask.y, lerp( _TransMask.z, v.texcoords.y, _SwipeU), _TransMask.w);
-					float4 transDst = float4(v.texcoords1.x, _TransDist.y, v.texcoords1.y, _TransDist.w);
+                	float4 transTex = float4(lerp( v.texcoords.x, _AlphaTrans.x, _MaskStretchU), _AlphaTrans.y, lerp(v.texcoords.y, _AlphaTrans.z, _MaskSwipeU), _AlphaTrans.w);
+					float4 transMask = float4(lerp(_MaskTrans.x, v.texcoords.x, _MaskStretchU), _MaskTrans.y, lerp( _MaskTrans.z, v.texcoords.y, _MaskSwipeU), _MaskTrans.w);
+					float4 transDst = float4(v.texcoords1.x, _DistTrans.y, v.texcoords1.y, _DistTrans.w);
 					                	
 					o.Position = UnityObjectToClipPos(posToWp);
 					o.Color = AlphaVertex(v.Color, v.texcoords3);
@@ -203,9 +202,9 @@
 					#endif
 					o.CustomData1 = v.texcoords;
 					o.CustomData2 = v.texcoords1;
-					o.Alpha = UvTransform(UvManipulation(float2(lerp(v.texcoords2.x, v.texcoords2.x + _SwirlAlpha,  InvertFloat(v.texcoords2.y, _SwirlInvAlpha)), v.texcoords2.y), _FlipUAlpha, _FlipVAlpha, _RotateAlpha), transTex);
-					o.Dissolve = UvTransform(UvManipulation(v.texcoords2, _FlipU, _FlipV, _Rotate), _TransDis);
-					o.Mask = lerp(UvTransform(UvManipulation(v.texcoords2, _FlipUMask, _FlipVMask, _RotateMask), transMask), o.Alpha, _SyncAlpha);
+					o.Alpha = UvTransform(UvManipulation(float2(lerp(v.texcoords2.x, v.texcoords2.x + _AlphaSwirl,  InvertFloat(v.texcoords2.y, _AlphaSwirlInv)), v.texcoords2.y), _AlphaFlipU, _AlphaFlipV, _AlphaRotate), transTex);
+					o.Dissolve = UvTransform(UvManipulation(v.texcoords2, _DisFlipU, _DisFlipV, _DisRotate), _DisTrans);
+					o.Mask = lerp(UvTransform(UvManipulation(v.texcoords2, _MaskFlipU, _MaskFlipV, _MaskRotate), transMask), o.Alpha, _MaskSyncAlpha);
 					o.Distortion = UvTransform(v.texcoords2, transDst);
                 	o.Ramp= ramp;
 					return o;
@@ -219,7 +218,7 @@
                 	#endif
 
                 	//Distortion
-					float2 motionTex = tex2D(_MotionTex, i.Distortion).rg;
+					float2 motionTex = tex2D(_DistTex, i.Distortion).rg;
 					float2 distortion = SimpleDistortionFragment(motionTex, i.CustomData2.z);
                 	#if DEBUG
                 		#if DEBUG_DST
@@ -243,7 +242,7 @@
                 		#endif
                 	#endif
 
-                	half alpha = BlendTexChannelFragment(tex.rgb,_BlendChannels.rgb);
+                	half alpha = BlendTexChannelFragment(tex.rgb,_AlphaBlendChannels.rgb);
 					#if DEBUG
                 		#if DEBUG_ALPHA
                 			return half4(alpha.xxx, 1.0); 
@@ -252,14 +251,14 @@
                 	alpha += glow.r + glow.g + glow.b;
 
                 	//dissolve function & Uv link to Particle Custom Data & Amplitude control 
-					half dissolve = tex2D(_DissolveTex, i.Dissolve + (distortion * _DistDis)).r;
+					half dissolve = tex2D(_DisTex, i.Dissolve + (distortion * _DistDis)).r;
 					#if DEBUG
                 		#if DEBUG_DIS
                 			return half4(dissolve.xxx, 1.0);
                 		#endif
                 	#endif
                 	
-                	half mask = DissolveFragment(dissolve, _Invert, _FallOff, i.CustomData1.w);
+                	half mask = DissolveFragment(dissolve, _DisInvert, _DisFallOff, i.CustomData1.w);
                 	#if DEBUG
                 		#if DEBUG_MASK
                 			return half4(mask.xxx, 1.0);;
@@ -278,5 +277,6 @@
 				ENDCG
 			}
 		}
+    	CustomEditor "InnoGames.VFX.Game.Editor.VFX_ShaderGUI_Particle_Truecolor_Multi_Dynamic"
 	}
 }

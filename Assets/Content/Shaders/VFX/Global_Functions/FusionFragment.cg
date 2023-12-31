@@ -6,7 +6,7 @@ Enableing vertex alpha and is using the vertex alpha from mesh texcoords3.
 
 inline float FusionMaskFragment(in float inMask, in float inAlpha, in float inUse)
 {
-    return lerp(inMask - (1 - inAlpha), inMask, inUse);
+    return lerp(inMask * (inAlpha), inMask, inUse);
 }
 
 inline float FusionFragment(in float inRampA, in float inRampB, in float inFusionIntensity, in float inUseMask)

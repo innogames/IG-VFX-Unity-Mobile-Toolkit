@@ -6,14 +6,14 @@
 
 #include "Remap.cg"
 
-inline float LightGradientVertex(in float3 inWpPos, in float3 inNormal, in float3 inLightCtr, in float inRange, in float inFallOff, in float inHardness)
+inline float LightGradientVertex(in float3 inWpPos, in float3 inNormal, in float3 inLightCtr, in float inRange, in float inFallOff, in float inHardness, in float inMultiplier = 0.0)
 {
     float dist = distance(inWpPos, inLightCtr);
     dist = RemapVector3((dist), 0.0, inRange, 0.0, 1.0);
     dist = (pow(saturate(1 - dist), inFallOff)) * inHardness;
     
     float3 dir = normalize(inLightCtr - inWpPos);
-    float angle = dot(normalize(inNormal), dir);
-    return saturate(dist);
+    float angle = max(0.0, dot(normalize(inNormal), dir));
+    return saturate(dist * lerp(1.0, angle, inMultiplier));
 }
 #endif
