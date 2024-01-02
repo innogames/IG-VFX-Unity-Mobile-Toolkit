@@ -2,7 +2,7 @@
 
  <br>
 
-![VFX](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/IntroEffect_01.gif)
+![VFX](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/IntroEffect_01.gif)
 <br>
 
 Welcome to InnoGames' open-source repository of VFX shaders/scripts for mobile productions!
@@ -63,7 +63,7 @@ interactive and dynamic experiences for players.
 This feature involves passing the position from a GameObject to the material variable '_SetPos'.
 <br>
 
-![Example](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/GetTransform_01.gif)
+![Example](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/GetTransform_01.gif)
 
 ### Properties
 
@@ -81,7 +81,7 @@ This feature involves passing the position from a GameObject to the material var
 This script synchronizes the target object's transform with the source object's transform.
 <br>
 
-![Example](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/LinkTransform_01.gif)
+![Example](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/LinkTransform_01.gif)
 
 ### Properties
 
@@ -131,7 +131,7 @@ Obtaining the Render Bounds of a Mesh or Skinned Mesh Renderer and passing them 
 requires the following variables: '_BoundsMin, _BoundsMax, _BoundsCtr, _BoundsSize'.
 <br>
 
-![Example](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/RenderBounds_01.gif)
+![Example](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/RenderBounds_01.gif)
 
 ### Properties
 
@@ -150,7 +150,7 @@ This script scales a game object based on the rotation from a another game objec
 that requires scaling.
 <br>
 
-![Example](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/ScaleByRotation_01.gif)
+![Example](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/ScaleByRotation_01.gif)
 
 ### Properties
 
@@ -180,8 +180,8 @@ Those scripts are manipulating particles and particle systems.
 The particles get aligned between two vectors and can be manipulated by a sinus curve.
 <br>
 
-![Example](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/ConstantPosition_01.gif)
-![Example](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/ConstantPosition_02.gif)
+![Example](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/ConstantPosition_01.gif)
+![Example](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/ConstantPosition_02.gif)
 
 ### Properties
 
@@ -295,9 +295,9 @@ You need to set up the vertex stream in your particle system.
 
 | Properties                                                                                                                                                  | Description                                                                        |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------|
-| ![Setup Vertex Stream in Renderer Module for meshes](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/fx_setup_shuriken_for_true_color_01.jpg) | Set up Vertex Stream for billboards and stretch particles as shown in the picture. |
-| ![Setup Vertex Stream in Renderer Module for meshes](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/fx_setup_shuriken_for_true_color_02.jpg) | Set up Vertex Stream for mesh particles as shown in the picture.                   |
-| ![Add and setup Custom Data Module](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/fx_setup_shuriken_for_true_color_03.jpg)                  | Enable and set Custom Data 1 and 2 as vectors and colors as shown in the picture.  |
+| ![Setup Vertex Stream in Renderer Module for meshes](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/fx_setup_shuriken_for_true_color_01.jpg) | Set up Vertex Stream for billboards and stretch particles as shown in the picture. |
+| ![Setup Vertex Stream in Renderer Module for meshes](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/fx_setup_shuriken_for_true_color_02.jpg) | Set up Vertex Stream for mesh particles as shown in the picture.                   |
+| ![Add and setup Custom Data Module](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/fx_setup_shuriken_for_true_color_03.jpg)                  | Enable and set Custom Data 1 and 2 as vectors and colors as shown in the picture.  |
 
 <br>
 
@@ -360,7 +360,7 @@ shader is intended to be used with a UI image.
 This shader transitions the image from one state to its actual picture.
 <br>
 
-![Example](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/ImageEffect_01.gif)
+![Example](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/ImageEffect_01.gif)
 
 ### Cascade Properties
 
@@ -397,7 +397,7 @@ This shader creates a glitch effect, like a TV glitch. By default, it is set up 
 creates a cartoon style. For a different style, simply change the textures.
 <br>
 
-![Example](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/ImageEffect_02.gif)
+![Example](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/ImageEffect_02.gif)
 
 ### Jitter Properties
 
@@ -492,7 +492,7 @@ This shader is mainly for fluid effects. It is based on the fusion concept. It i
 simple fluid effects for mobile productions.
 <br>
 
-![Example](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/Fusion.gif)
+![Example](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/Fusion.gif)
 <br>
 
 #### Fusion Concept!
@@ -503,8 +503,8 @@ shapes. With additional motion applied to each ramp, and this way, you can creat
 results, the grayscale ramp should be soft.
 <br>
 
-![Example](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/FusionConcept_01.gif)
-![Example](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/FusionConcept_02.gif)
+![Example](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/FusionConcept_01.gif)
+![Example](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/FusionConcept_02.gif)
 
 ### Main Texture Properties
 
@@ -564,7 +564,7 @@ dynamics are controlled by the custom data from the particle system Shuriken. Yo
 be warped in one direction (U or V).
 <br>
 
-![Example](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/Multimotion.gif)
+![Example](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/Multimotion.gif)
 
 ### Debug Properties
 
@@ -663,7 +663,7 @@ modular and customizable approach. It covers a broad spectrum of VFX needs, from
 and shading, to dissolve and distortion effects.
 <br>
 
-![Example](https://github.com/innogames/IgVFXUnity/blob/main/Docs/Images/LightAndMotionShader_01.gif)
+![Example](https://github.com/innogames/IG-VFX-Unity-Mobile-Toolkit/blob/main/Docs/Images/LightAndMotionShader_01.gif)
 <br>
 Features:
 <br>
