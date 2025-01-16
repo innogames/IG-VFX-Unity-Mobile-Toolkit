@@ -1,0 +1,30 @@
+/*
+Enableing vertex alpha and is using the vertex alpha from mesh texcoords3. 
+*/
+#ifndef FX_INVERT
+#define FX_INVERT
+
+inline float InvertFloat(in float inValue, in float inInvert)
+{
+    return lerp(inValue, -inValue, inInvert);
+}
+
+inline float OneMinusFloat(in float inValue, in float inInvert)
+{
+    return lerp(inValue, 1 - inValue, inInvert);
+}
+
+inline float2 OneMinusVector2(in float2 inValue, in float2 inInvert)
+{
+    return lerp(inValue, 1 - inValue, inInvert);
+}
+
+inline float3 InvertVector(in float3 inValue, in float inInvert)
+{
+    return lerp(inValue, -inValue, inInvert);
+}
+
+
+#endif
+
+

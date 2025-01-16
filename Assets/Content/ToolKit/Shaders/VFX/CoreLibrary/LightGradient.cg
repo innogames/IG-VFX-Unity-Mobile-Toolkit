@@ -1,0 +1,28 @@
+/*
+*Generates a gradient by a realtive to source position.
+*/
+#ifndef FX_LIGHT_GRADIENT
+#define FX_LIGHT_GRADIENT
+
+#include "Remap.cg"
+#include "UnityLightingCommon.cginc"
+
+inline half LightGradientVertex(float3 inWpPos, float3 inNormal, float3 inLightCtr, float inRange, float inFallOff, float inHardness, float inMultiplier = 0.0)
+{
+    float dist = distance(inWpPos, inLightCtr);
+    dist = RemapVector3((dist), 0.0, inRange, 0.0, 1.0);
+    dist = (pow(saturate(1 - dist), inFallOff + 0.001)) * inHardness;
+
+    float3 dir = normalize(inLightCtr - inWpPos);
+    float angle = max(0.0, dot(normalize(inNormal), dir));
+    return saturate(dist * lerp(1.0, angle, inMultiplier));
+}
+
+inline half4 LightVertex(in half3 normal, in half blendLightColor)
+{
+    half3 worldNormal = UnityObjectToWorldNormal(normal);
+    half nl = max(0, dot(worldNormal, _WorldSpaceLightPos0.xyz));
+    half4 lightColor = lerp(0, _LightColor0, blendLightColor);
+    return nl ;
+}
+#endif

@@ -1,0 +1,127 @@
+/*
+// Upgrade NOTE: excluded shader from DX11, OpenGL ES 2.0 because it uses unsized arrays
+#pragma exclude_renderers d3d11 gles
+*The GlowFragment function is designed to produce a glow effect.
+*/
+#ifndef FX_VOLUME
+#define FX_VOLUME
+
+#include "CoreLibrary/Effects_Library.cg"
+
+inline float3 DeformationRimVertex(float3 position,float3 normal, float2 texcoords, float deformPhase, float offset, float deformAmplitude, float3 deformAxis, float3 deformPush, float4 customData, float customChannel, float useCustomData)
+{
+    half wave = saturate(WaveCurveVertex((texcoords.x * deformPhase) + (lerp(offset, customData[customChannel], useCustomData)), 1.0, customData, (deformAmplitude / 100.0)));
+    position += wave * deformAxis;
+    position += normal * (wave * deformPush);
+    return position + deformAxis;
+}
+
+inline float AlphaMaskVertex(float2 texcoords, float4 transformation, float4 customData, float4 customDataChannels, float4 squeezAndSwipe)
+{
+    float2 aMask = UvTransform(texcoords, transformation);
+    float4 cd1AMask =float4(customData[_AMaskCh.x], customData[_AMaskCh.y], customData[_AMaskCh.z], customData[_AMaskCh.w]);
+    float4 cdAMaskTrans = cd1AMask * squeezAndSwipe;
+    return (aMask * (cdAMaskTrans.xy + transformation.xy)) + cdAMaskTrans.zw;
+}
+
+inline float WorldPositionMaskVertex(float position, float multiplier, float offset)
+{
+   return ((position / 10.0) * multiplier) + +offset;
+}
+
+inline float3 PushVertex(float3 position, float3 normal, float push)
+{
+    return position -= normal * push;
+}
+
+inline float HeatVertex(float4 position, float3 normal)
+{
+    float heat = 0.0;
+
+    #if HEAT
+        heat = saturate(FresnelVertexV2(normal, position));
+    #endif
+
+    return heat;
+}
+
+inline float2 DissolveUvVertex(float3 worldPosition, float2 texcoords, float flipU, float flipV, float rotation,
+    in float4 transformation, out float2 uv, out float2 uvFront, out float2 uvSide, out float2 uvTop)
+{
+    uv = UvManipulation(texcoords, flipU, flipV, rotation);
+    uvFront = UvTransform(worldPosition.xy, transformation);
+    uvSide = UvTransform(worldPosition.zy, transformation);
+    uvTop = UvTransform(worldPosition.xz, transformation);
+    return uv;
+}
+
+inline float PointLightVertex(float3 position, float3 normal, float4 customData, float channel, float blendCustomData,
+    float3 localPosition, float3 lightOffset, float range, float falloff, float hardness, float convertToLight)
+{
+    float light = 0;
+
+    #if POINT_LIGHT
+        light = saturate(LightGradientVertex(position, normal, (localPosition + lightOffset), range, falloff, hardness, convertToLight));
+        light *= lerp(1.0, customData[channel], blendCustomData);
+    #endif
+
+    return light;
+}
+
+inline half AlphaMaskFragment( sampler2D alphaMap,  float2 texcoords,  half useMask)
+{
+    half aMask = tex2D(alphaMap, texcoords).r;
+    return lerp(1.0, aMask, useMask);
+}
+
+inline half DissolveTriplanarFragment(sampler2D dissolveMap, sampler2D directionMap, float3 normal, float4 uvFrontSide,
+    float4 uvTop,  float4 customData, half strength, half customChannel, half useCustomData, half invert, half fallOff)
+{
+    half2 disUseCd = half2(strength, customData[customChannel]);
+    half disDirection = tex2D(directionMap, uvTop.zw).r;
+    half disTex = UvTriplanarProjectionFragment(dissolveMap, uvFrontSide.xy, uvFrontSide.zw, uvTop.xy, normal).r;
+    disTex *= disDirection;
+    return DissolveFragment(disTex, invert, fallOff, disUseCd[useCustomData]);
+}
+
+inline half4 ShadingFragment(half ptLight, half4 color, sampler2D lookUpTable, half lookUpTable_width, half passLUT, half4 light, half disableLight, half worldPositionMask, half blendLayer,
+     half3 worldPositionColor, half dissolve, half alphaMask,half3 gradientColor, half gradientUseLUT, half gradientStrength, half gradientBrightness, half3 wpGradientColor, half4 customData,
+     half customChannel, half useCustomData, out half alpha)
+{
+    light *= 1.5;
+    half2 mask = lerp(light, 1.0, disableLight);
+    half lutOffset = lerp(0, customData[customChannel], useCustomData);                
+
+    alpha = saturate(worldPositionMask * dissolve * blendLayer * color.a * alphaMask);
+    half4 gradientMapping = GradientMappingFragment(mask[disableLight] * dissolve * worldPositionColor, lookUpTable, lookUpTable_width, lutOffset, passLUT, half2(0.0, 0.0));
+    gradientMapping.rgb = lerp(wpGradientColor, gradientMapping.rgb, worldPositionColor);
+    color = lerp(gradientMapping, gradientMapping, saturate(gradientMapping.a));
+
+    #if POINT_LIGHT
+        gradientColor = lerp(gradientColor, color.rgb, gradientUseLUT);
+        color.rgb += ptLight * ((gradientColor * gradientStrength) + _GradientBrightness);
+    #endif
+
+    return color;
+}
+
+inline half3 TemperatureFragment(half4 color, half heat, sampler2D temperatureMap, sampler2D directionMap, float3 normal, float4 uvFrontSide, float4 uvTop, float4 customData, half strength, half customChannel, half useCustomData,
+    half4 heatColor, half invert, half fallOff, half temperatureMul, half temperatureHardness, half heatColorMul)
+{
+    half tempDirection = tex2D(directionMap, uvTop.zw).r;
+    half tempDissolve = 1.0;
+
+    half2 tempUseCd = half2(strength, customData[customChannel]);
+
+    half4 tempMap = UvTriplanarProjectionFragment(temperatureMap, uvFrontSide.xy, uvFrontSide.zw, uvTop.xy, normal);
+    tempMap *= tempDirection;
+
+    tempDissolve = DissolveFragment(tempMap, invert, fallOff, tempUseCd[useCustomData]);
+
+    heat *=  temperatureMul;
+    heat += temperatureHardness;
+    color.rgb = lerp(color.rgb, lerp(heatColor * 0.5, heatColor * heatColorMul,  tempMap) , tempDissolve * saturate(heat));
+    return color;
+}
+
+#endif

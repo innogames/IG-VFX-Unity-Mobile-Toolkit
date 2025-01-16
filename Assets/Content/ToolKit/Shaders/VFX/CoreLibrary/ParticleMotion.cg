@@ -1,0 +1,28 @@
+#ifndef FX_PARTICLE_MOTION
+#define FX_PARTICLE_MOTION
+
+
+float4 particleMotion(float4 position, float4 morphTarget, float animationOffset, float4 color, float speed, float strengthX, float strengthY, float useSymetryX, float useSymetryY)
+{
+    float time = (_Time.y * speed) - animationOffset;
+    float sinTime = sin(time);
+    float absTime = abs(sinTime);
+    
+    float4 morph = position;
+    float constantBiasR = (color.r - 0.5) * 2;
+    float constantBiasG = (color.g - 0.5) * 2;
+    float linearR = sinTime * color.r;
+    float linearG = sinTime * color.g;
+    float symetryR = absTime * -constantBiasR;
+    float symetryG = absTime * -constantBiasG;
+    float switchR = lerp(linearR * strengthX, symetryR * strengthX, useSymetryX);
+    float switchY = lerp(linearG * strengthY, symetryG * strengthY, useSymetryY);
+    position.x = lerp(position.x, morphTarget.x, switchR); 
+    position.z = lerp(position.z, morphTarget.z, switchY);
+    
+    return position;
+
+    //return float4(1.0, 1.0, 1.0, 1.0);
+}
+
+#endif

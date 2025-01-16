@@ -1,0 +1,16 @@
+/*
+Uvs getting a offset by Uv ramp
+*/
+#ifndef FX_UVTWISTVERTEX
+#define FX_UVTWISTVERTEX
+
+#include "Invert.cg"
+
+inline float2 UvTwistVertex(in float2 inTexcoords, in float2 inTwist, in float inTwistInvU, in float inTwistInvV)
+{
+    inTexcoords.x += inTwist.x * OneMinusFloat(inTexcoords.y, inTwistInvU);
+    inTexcoords.y += inTwist.y * OneMinusFloat(inTexcoords.x, inTwistInvV); 
+    return inTexcoords;
+}
+
+#endif
