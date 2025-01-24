@@ -1,0 +1,17 @@
+/*
+Set Light 
+*/
+#ifndef FX_INVERSLERP
+#define FX_INVERSLERP
+
+inline float InvLerpFloat(in float inValue, in float inFrom, in float inTo)
+{
+    return (inValue - inFrom) / (inTo - inFrom);
+}
+
+inline float3 InvLerpVector3(in float3 inValue, in float3 inFrom, in float3 inTo)
+{
+    return (inValue - inFrom) / (inTo - inFrom);
+}
+
+#endif

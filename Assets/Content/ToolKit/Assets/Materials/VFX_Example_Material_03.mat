@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: VFX_Example_Material_03
+  m_Shader: {fileID: 4800000, guid: f5343e5cc905193419ddc1fd56a1191d, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaG:
+        m_Texture: {fileID: 2800000, guid: 880f623372fa81e40bcc8f6c94ccde23, type: 3}
+        m_Scale: {x: 3, y: 1}
+        m_Offset: {x: 0, y: 0.91}
+    - _AlphaR:
+        m_Texture: {fileID: 2800000, guid: 502f4dc408226264aa3c004950f14603, type: 3}
+        m_Scale: {x: 0.5, y: 1}
+        m_Offset: {x: 0.25, y: 0}
+    - _DistortionTex:
+        m_Texture: {fileID: 2800000, guid: 5a41997a96cb184498976948980b09be, type: 3}
+        m_Scale: {x: 1, y: 1.5}
+        m_Offset: {x: 0, y: 0}
+    - _GlowTex:
+        m_Texture: {fileID: 2800000, guid: a5a503fc6a7692d42904f09f6709f978, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask:
+        m_Texture: {fileID: 2800000, guid: 4620a40c90f6df440abb9d6137726963, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Opacity:
+        m_Texture: {fileID: 2800000, guid: e46000821d8949640b83afb405973305, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Ramp:
+        m_Texture: {fileID: 2800000, guid: 133f6928e4bb40f418261a54e6c49060, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Source:
+        m_Texture: {fileID: 2800000, guid: 502f4dc408226264aa3c004950f14603, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Target:
+        m_Texture: {fileID: 2800000, guid: 880f623372fa81e40bcc8f6c94ccde23, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Thin:
+        m_Texture: {fileID: 2800000, guid: e1f686e26e796124db6b071f248751e6, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AniamtionProp: 0
+    - _CascadeDescription: 0
+    - _ColorMask: 15
+    - _Debug: 0
+    - _Descrip: 0
+    - _DisStrengh: 0.219
+    - _DisTex: 0.123
+    - _DisThin: 0.621
+    - _DisX: 0.67
+    - _DisY: 0
+    - _DisortionDescription: 0
+    - _Edge: 0.183
+    - _Enable: 1
+    - _Fusion: 0.155
+    - _FusionProp: 0
+    - _Glow: 2
+    - _GlowProp: 0.93
+    - _ShadingProp: 0
+    - _Solve: 0.864
+    - _SourceProp: 0
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _TargetProp: 0
+    - _UseUIAlphaClip: 0
+    - _setTscaleX: 1.54
+    - _setTscaleY: 1.82
+    m_Colors:
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _EdgeC: {r: 0.54954714, g: 0.18396229, b: 1, a: 1}
+    - _GlowC: {r: 1, g: 0.80501294, b: 0.6084906, a: 1}
+    - _GlowGChannel: {r: 0, g: 0, b: 0, a: 0}
+    - _GlowOffScale: {r: -0.05, g: 0.5, b: 0.25, a: 0.25}
+    - _GlowRChannel: {r: 0, g: 0, b: 1.03, a: 0}
+    - _GlowSwipe: {r: -0.25, g: 0, b: 0, a: 0}
+    - _MainC: {r: 0.1533019, g: 0.16349891, b: 0.5, a: 1}
+    - _SourceChannel: {r: 0, g: 0, b: 0.79, a: 0}
+    - _SourceOffScale: {r: 0, g: 0.3, b: 0.35, a: 1}
+    - _Swipe: {r: -0.25, g: 0.51, b: 0, a: 0}
+    - _TargetChannel: {r: 0.25, g: 0.19, b: 0.28, a: 0}
+    - _TargetOffScale: {r: 0, g: 0.98, b: 3, a: 1}
+    - _UseAlphaGChannel: {r: 0, g: 0.35, b: 0, a: 0}
+    - _UseAlphaRChannel: {r: 0.5, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

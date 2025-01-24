@@ -1,0 +1,31 @@
+/*
+Uv Distortion Methodes.
+*/
+#ifndef FX_DISTORTION
+#define FX_DISTORTION
+
+inline float2 DistortionFragment(in float inMask, in float inInvMask, in float2 inMotionVectorTex, in float inStrength, in float inUseNegative, in float2 inTexcoords)
+{
+    float dstMask = lerp(inMask, 1 - inMask, inInvMask);
+    float2 disTex = lerp(inMotionVectorTex, (inMotionVectorTex - 0.5) * 2.0, inUseNegative);
+    disTex = (disTex * dstMask) * inStrength;
+    return float2(inTexcoords.x + disTex.r, inTexcoords.y + disTex.y);
+}
+
+inline float2 DistortionSimpleFragment(in float inMask, in float2 inMotionVectorTex, in float inStrength)
+{
+    inMotionVectorTex = (inMotionVectorTex * 2.0) - 1.0;
+    return inMotionVectorTex * inStrength * inMask;
+}
+
+inline float2 DistortionFragmentV2(float inMask, float inInvMask, float2 inMotionVectorTex, float inStrength, float2 inTexcoords)
+{
+    float dstMask = lerp(inMask, 1 - inMask, inInvMask);
+    float2 disTex = (inMotionVectorTex - 0.5) * 2.0;
+    disTex = (disTex * inStrength) * dstMask;
+    return inTexcoords + disTex;
+}
+
+#endif
+
+

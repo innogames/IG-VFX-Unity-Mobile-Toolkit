@@ -1,0 +1,33 @@
+/*
+Adding values by a grayscale ramp.
+*/
+#ifndef FX_SCREENDISTORTION
+#define FX_SCREENDISTORTION
+
+#include "UnityCG.cginc"
+
+inline float4 ScreenDistortionVertex(float4 position, out float4 grabPos, out float4 grabPosCenter)
+{
+    // grab coordinates
+    grabPos = ComputeGrabScreenPos(position);
+    grabPosCenter = ComputeGrabScreenPos(UnityObjectToClipPos(float4(0, 0, 0, 1)));
+
+    grabPos.xy /= grabPos.w;
+    grabPosCenter.xy /= grabPosCenter.w;
+}
+
+inline half4 ScreenDistortionFragment(in float4 grabPos, in float4 grabPosCenter, in sampler2D backgroundTexture, in float strength)
+{
+    half2 screenPos = (grabPos.xy);
+    half2 screenPosCenter = (grabPosCenter.xy);
+    half2 direction = normalize(screenPos - screenPosCenter);
+
+    clip(abs(strength.x) - 0.001);
+
+    return  tex2D(backgroundTexture, screenPos + direction * strength.x);
+
+}
+
+#endif
+
+

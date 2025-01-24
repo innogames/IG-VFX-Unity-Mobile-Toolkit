@@ -1,0 +1,14 @@
+#ifndef FX_CURVEFUNCTIONS
+#define FX_CURVEFUNCTIONS
+
+inline float WaveCurveVertex(in float inValue, in float inTime, in float inDeformSpeed, in float inDeformStrength)
+{
+    return (pow(cos(3.14 * ((inValue * 3) + (inTime * inDeformSpeed)) / 2.0), 2.0)) * inDeformStrength;
+}
+
+inline float LinearCurveVertex(in float inTime, in float inDeformSpeed)
+{
+    return 1 - pow(abs(sin(3.14 * (inTime * inDeformSpeed) / 2.0)), 1.0);
+}
+
+#endif

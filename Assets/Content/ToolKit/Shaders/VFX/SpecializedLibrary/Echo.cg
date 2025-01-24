@@ -1,0 +1,21 @@
+#ifndef FX_ECHO
+#define FX_ECHO
+
+#include "UnityCG.cginc"
+#include "CoreLibrary/Effects_Library.cg"
+
+float4 OffsetPos(float4 pos, float vtxAlpha, float offsetMin, float offsetMax, float4 animation, out float opacity)
+{
+    opacity = vtxAlpha * animation.z;
+    return float4(pos.xy, pos.z + (lerp(offsetMin, offsetMax, animation.y) * animation.x), pos.w);
+ }
+
+float AlphaFragment(float opacity)
+{
+    
+    return opacity;
+
+}
+
+
+#endif
