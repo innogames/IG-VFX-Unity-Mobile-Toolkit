@@ -1,0 +1,26 @@
+/*
+Generating a TRIPLANAR uv. 
+*/
+#ifndef FX_TRIPLANAR
+#define FX_TRIPLANAR
+#include "UvAdvancedTransformVertex.cg"
+
+inline half4 UvTriplanarProjectionFragment(in sampler2D map, in float2 uvFront, in float2 uvSide, in float2 uvTop, in half3 normal)
+{
+    half4 tex_front = tex2D(map, uvFront);
+    half4 tex_side = tex2D(map, uvSide);
+    half4 tex_top = tex2D(map, uvTop);
+    
+    half3 weights = normal;
+    weights = abs(weights);
+    weights = weights / (weights.x + weights.y + weights.z);
+
+    tex_front *= weights.z;
+    tex_side *= weights.x;
+    tex_top *= weights.y;
+
+    half4 tex = tex_front + tex_side + tex_top;
+    return tex;
+}
+
+#endif

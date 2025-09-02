@@ -1,0 +1,220 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: VFX_Example_Material_57
+  m_Shader: {fileID: 4800000, guid: 8c9939bd09caa574fb7b45f234d4e40a, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - DISTORTION
+  - GEO
+  - LIGHT
+  m_InvalidKeywords:
+  - _B_LOAD_COL_TEX
+  - _DISABLEALPHA_ON
+  - _DISTORTION
+  - _GEO
+  - _LIGHT
+  - _LIGHTRANGEMUL_ON
+  - _OFFVC_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DisTex:
+        m_Texture: {fileID: 2800000, guid: 2cf017a1c62e3ab4bbd3c818501c5116, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LookUpTex:
+        m_Texture: {fileID: 8603670364444619471, guid: 12bcc8941f1d85d488671b89089d6cea, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_72ab43ee7e5b4ff3acd5a9fb57f150dc_Texture_1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SoftbodyNormals:
+        m_Texture: {fileID: 2800000, guid: 5c4ffc1f0d4877949a602c7a6a065f00, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SoftbodyPos:
+        m_Texture: {fileID: 2800000, guid: 79485ef2423456242bd3219d1406745f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _colTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _posTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _posTexture2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _rotTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _spareColTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _B_LOAD_COL_TEX: 1
+    - _B_LOAD_NORM_TEX: 0
+    - _B_LOAD_POS_TWO_TEX: 0
+    - _B_UNLOAD_ROT_TEX: 0
+    - _B_autoPlayback: 1
+    - _B_interpolate: 0
+    - _B_interpolateCol: 0
+    - _B_interpolateSpareCol: 0
+    - _B_surfaceNormals: 1
+    - _B_twoSidedNorms: 0
+    - _BlendAdd: 0
+    - _BumpScale: 1
+    - _Cull: 2
+    - _Cutoff: 0.5
+    - _DISSOLVE: 0
+    - _DISSOlVE_CLIP: 0
+    - _DISTORTION: 1
+    - _DetailNormalMapScale: 1
+    - _DisFallOff: 6.2
+    - _DisFlipU: 0
+    - _DisFlipV: 0
+    - _DisInv: 0
+    - _DisRot: 0
+    - _DisStrength: -0.6146292
+    - _DisableAlpha: 1
+    - _DstBlend: 0
+    - _GEO: 1
+    - _GeoDeformAmplitude: 0
+    - _GeoDeformPhase: 0
+    - _GeoOffset: 0
+    - _GeoRimHardness: 0
+    - _GeoRimMul: 0.922
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _GlowingStrength: 1
+    - _GradientBrightness: 0
+    - _GradientStrength: 1.85
+    - _LIGHT: 1
+    - _LITSHADING: 0
+    - _LightFallOff: 0.41
+    - _LightHardness: 0.67
+    - _LightRange: 3.4
+    - _LightRangeMul: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _PassLUT: 0
+    - _QueueControl: -1
+    - _QueueOffset: 0
+    - _SOFTBODY: 0
+    - _SmoothnessTextureChannel: 0
+    - _SoftbodyFramecount: 23
+    - _SoftbodyTimeposition: 0.9918542
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _StencilComp: 0
+    - _StencilMask: 0
+    - _StencilPass: 0
+    - _StencilRead: 0
+    - _StencilWrite: 0
+    - _UVSec: 0
+    - _UV_COLOR_RAMP: 0
+    - _UV_MANIPULATE: 0
+    - _UseAlpha: 0
+    - _ZTest: 4
+    - _ZWrite: 1
+    - _boundMaxX: 30.8
+    - _boundMaxY: 61.8
+    - _boundMaxZ: 54.649998
+    - _boundMinX: -52.9
+    - _boundMinY: -2.7020001
+    - _boundMinZ: -42.3
+    - _displayFrame: 1
+    - _frameCount: 23
+    - _gameTimeAtFirstFrame: 0
+    - _houdiniFPS: 24
+    - _offVc: 1
+    - _playbackSpeed: 1
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DisTrans: {r: 1, g: 1, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GeoAxis: {r: 0, g: 0, b: 0, a: 0}
+    - _GeoPush: {r: 0, g: 0, b: 0, a: 0}
+    - _GradientColor: {r: 0, g: 1, b: 0.99999976, a: 1}
+    - _LUTAnimate: {r: 0, g: 0, b: 0, a: 0}
+    - _Light: {r: 1, g: 1, b: 0, a: 0}
+    - _LightPos: {r: 0.22, g: 1.77, b: 0, a: 0}
+    - _SetPos: {r: 0, g: 0, b: 0, a: 0}
+    - _UvRampBlend: {r: 1, g: 0, b: 0, a: 0}
+    - _UvRampOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _UvRampSet: {r: 0, g: 1, b: 0, a: 0}
+  m_BuildTextureStacks: []
