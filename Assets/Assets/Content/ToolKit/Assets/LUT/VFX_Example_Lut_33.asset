@@ -1,0 +1,181 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!28 &-2727798286003813160
+Texture2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: VFX_PolarLights_LUT_Texture
+  m_ImageContentsHash:
+    serializedVersion: 2
+    Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
+  m_IsAlphaChannelOptional: 0
+  serializedVersion: 2
+  m_Width: 64
+  m_Height: 4
+  m_CompleteImageSize: 1024
+  m_MipsStripped: 0
+  m_TextureFormat: 4
+  m_MipCount: 1
+  m_IsReadable: 1
+  m_IsPreProcessed: 0
+  m_IgnoreMipmapLimit: 0
+  m_MipmapLimitGroupName: 
+  m_StreamingMipmaps: 0
+  m_StreamingMipmapsPriority: 0
+  m_VTOnly: 0
+  m_AlphaIsTransparency: 0
+  m_ImageCount: 1
+  m_TextureDimension: 2
+  m_TextureSettings:
+    serializedVersion: 2
+    m_FilterMode: 1
+    m_Aniso: 1
+    m_MipBias: 0
+    m_WrapU: 1
+    m_WrapV: 1
+    m_WrapW: 1
+  m_LightmapFormat: 0
+  m_ColorSpace: 0
+  m_PlatformBlob: 
+  image data: 1024
+  _typelessdata: 79e00aff79e00aff69e00aff58e00aff49e00aff3ce00aff30e00aff26e00aff1de00aff18d90aff14cd0bff11c20bff0eb70bff0bad0cff09a30cff07990cff05900dff04870dff037e0eff02760eff016e0fff01660fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff005e0fff7aff2dff7aff2dff7aff2dff7aff2dff7aff2dff7aff2dff7aff2dff7aff2dff7aff2dff7aff2dff7aff2dff7aff2dff77fe2eff66f937ff56f440ff47ef4aff3bea55ff2fe560ff25e16dff1ddc7aff15d789ff0fd398ff0acea9ff06c9baff04c5cdff02c1e0ff00bcf4ff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff00baffff89ff00ff89ff00ff89ff00ff89ff00ff89ff00ff89ff00ff89ff00ff89ff00ff8afd00ff8ff700ff94f000ff9ae901ffa0e301ffa5dc01ffabd601ffb1cf01ffb7c901ffbec302ffc4bd02ffcab802ffd1b203ffd8ac03ffdfa703ffe6a104ffed9c04fff49705fffb9205ffff8d05ffff8705ffff8205ffff7c05ffff7705ffff7205ffff6d06ffff6906ffff6406ffff5f06ffff5b06ffff5706ffff5306ffff4f06ffff4b06ffff4706ffff4306ffff4006ffff3c06ffff3906ffff3606ffff3206ffff3206ffff3206ffff3206ffff3206ffff3206ffff3206ffff3206ffff3206ffff3206ffff3206ffff3206ffff3206ffff3206ffff3206ffff3206ff30ff27ff30ff27ff30ff27ff30ff27ff30ff27ff30ff27ff30ff27ff30ff27ff30ff27ff30ff27ff42ca32ff6d7b49ffa44266ffe81c88fff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188efff4188eff
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab586b394ad77ff44b106d5f1a84b424, type: 3}
+  m_Name: VFX_Example_Lut_33
+  m_EditorClassIdentifier: 
+  gradients:
+  - serializedVersion: 2
+    key0: {r: 0.7183904, g: 0.94509804, b: 0.21960783, a: 1}
+    key1: {r: 0.3532053, g: 0.94509804, b: 0.21960783, a: 1}
+    key2: {r: 0, g: 0.6415094, b: 0.27238497, a: 0.8627451}
+    key3: {r: 0, g: 0.7169812, b: 0.7103664, a: 1}
+    key4: {r: 0.4993031, g: 0.3443396, b: 1, a: 0.14509805}
+    key5: {r: 0.21226418, g: 1, b: 0.880341, a: 1}
+    key6: {r: 0.07058823, g: 1, b: 0.5608777, a: 0.22352941}
+    key7: {r: 0, g: 1, b: 0.9472468, a: 1}
+    ctime0: 1157
+    ctime1: 8674
+    ctime2: 22937
+    ctime3: 46067
+    ctime4: 27563
+    ctime5: 34502
+    ctime6: 43947
+    ctime7: 65535
+    atime0: 19853
+    atime1: 60138
+    atime2: 23516
+    atime3: 31033
+    atime4: 39128
+    atime5: 47224
+    atime6: 54934
+    atime7: 65535
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  - serializedVersion: 2
+    key0: {r: 0.7202358, g: 1, b: 0.4575472, a: 1}
+    key1: {r: 0, g: 0.87037206, b: 1, a: 1}
+    key2: {r: 0, g: 0.87037206, b: 1, a: 0.8627451}
+    key3: {r: 1, g: 0, b: 0.34542608, a: 1}
+    key4: {r: 0.4993031, g: 0.3443396, b: 1, a: 0.14509805}
+    key5: {r: 0.21226418, g: 1, b: 0.880341, a: 1}
+    key6: {r: 0.2904165, g: 0.07058823, b: 1, a: 0.22352941}
+    key7: {r: 0, g: 0.1660657, b: 1, a: 1}
+    ctime0: 12336
+    ctime1: 27563
+    ctime2: 44140
+    ctime3: 22166
+    ctime4: 27563
+    ctime5: 34502
+    ctime6: 43947
+    ctime7: 65535
+    atime0: 0
+    atime1: 65535
+    atime2: 23516
+    atime3: 31033
+    atime4: 39128
+    atime5: 47224
+    atime6: 54934
+    atime7: 65535
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  - serializedVersion: 2
+    key0: {r: 0.7581998, g: 1, b: 0, a: 1}
+    key1: {r: 1, g: 0.77484286, b: 0.15566039, a: 1}
+    key2: {r: 1, g: 0.47952452, b: 0.16509432, a: 0.8627451}
+    key3: {r: 1, g: 0.13642257, b: 0.22026503, a: 1}
+    key4: {r: 0.4993031, g: 0.3443396, b: 1, a: 0.14509805}
+    key5: {r: 0.21226418, g: 1, b: 0.880341, a: 1}
+    key6: {r: 0.2904165, g: 0.07058823, b: 1, a: 0.22352941}
+    key7: {r: 0, g: 0.1660657, b: 1, a: 1}
+    ctime0: 8096
+    ctime1: 27563
+    ctime2: 50115
+    ctime3: 65535
+    ctime4: 27563
+    ctime5: 34502
+    ctime6: 43947
+    ctime7: 65535
+    atime0: 0
+    atime1: 65535
+    atime2: 23516
+    atime3: 31033
+    atime4: 39128
+    atime5: 47224
+    atime6: 54934
+    atime7: 65535
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  - serializedVersion: 2
+    key0: {r: 0.47203586, g: 1, b: 0.4292453, a: 1}
+    key1: {r: 0.98039216, g: 0.33725494, b: 0.770495, a: 1}
+    key2: {r: 0, g: 0.06881044, b: 0.5660378, a: 0.8627451}
+    key3: {r: 0, g: 0.06881044, b: 0.5660378, a: 1}
+    key4: {r: 0, g: 0, b: 0, a: 0.14509805}
+    key5: {r: 0.21226418, g: 1, b: 0.880341, a: 1}
+    key6: {r: 0.2904165, g: 0.07058823, b: 1, a: 0.22352941}
+    key7: {r: 0, g: 0.1660657, b: 1, a: 1}
+    ctime0: 9830
+    ctime1: 13685
+    ctime2: 29105
+    ctime3: 28720
+    ctime4: 40670
+    ctime5: 34502
+    ctime6: 43947
+    ctime7: 65535
+    atime0: 0
+    atime1: 65535
+    atime2: 23516
+    atime3: 31033
+    atime4: 39128
+    atime5: 47224
+    atime6: 54934
+    atime7: 65535
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  width: 64
+  texture: {fileID: -2727798286003813160}

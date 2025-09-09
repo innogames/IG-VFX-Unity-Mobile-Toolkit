@@ -1,0 +1,22 @@
+#ifndef FX_EFFECTS_LIBRARY
+#define FX_EFFECTS_LIBRARY
+
+#include "AlphaVertex.cg"
+#include "BlendTextChannelFragment.cg"
+#include "CurveFunctionsVertex.cg"
+#include "DissolveFragment.cg"
+#include "DistortionFragment.cg"
+#include "Fresnel.cg"
+#include "GradientMapping.cg"
+#include "InversLerp.cg"
+#include "Invert.cg"
+#include "LightGradient.cg"
+#include "ParticleMotion.cg"
+#include "Remap.cg"
+#include "UvAdvancedTransformVertex.cg"
+#include "UvRamp.cg"
+#include "UvTriplanar.cg"
+#include "UvTwistVertex.cg"
+#include "ScreenDistortion.cg"
+
+#endif
